@@ -1,0 +1,123 @@
+# WordPress #
+###################
+wp-config.php
+
+# SFTP Configs #
+###################
+sftp-config.json
+*SERVER.txt
+
+# NPM Modules #
+###################
+npm-debug.log
+node_modules
+
+# Build Systems
+##################
+.sass-cache/
+.sass-cache
+*gem
+Gemfile.lock
+tmp/
+
+# Compiled source #
+###################
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.sos
+*.a
+
+# Packages #
+############
+# it's better to unpack these files and commit the raw source
+# git has its own built in compression methods
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# Logs and databases #
+######################
+*.log
+*.sql
+*.sqlite
+cache/
+log/
+
+# OS generated files #
+######################
+.DS_Store
+*.DS_Store
+._.DS_Store
+**/.DS_Store
+**/._.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+.AppleDouble
+.LSOverride
+.DocumentRevisions-V100
+.fseventsd
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Icon must end with two \r #
+###################
+Icon
+
+# Directories potentially created on remote AFP share #
+###################
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# Ruby Files #
+###################
+#plugins
+/shims
+/version
+/versions
+/sources
+/cache
+/libexec/*.dylib
+/src/Makefile
+/src/*.o
+/gems
+
+# Folders #
+######################
+_obj
+_test
+
+# Architecture specific extensions/prefixes #
+###################
+#*.[568vq]
+#[568vq].out
+#*.cgo1.go
+#*.cgo2.c
+#_cgo_defun.c
+#_cgo_gotypes.go
+#_cgo_export.*
+#_testmain.go
+#imgcat
+#imgls
+
+# custom files #
+###################
+#custom/
+#!custom/plugins/example
+#!custom/example.zsh
