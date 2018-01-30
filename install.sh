@@ -6,6 +6,9 @@ echo "\n Hey there. Never mind me, just setting up your system.\n"
 
 ./homebrew/install.sh
 
+./zsh/install.sh
+
 cp .gitignore.global ~
+cp .hushlogin ~
 
 echo " All done! Enjoy.\n"
