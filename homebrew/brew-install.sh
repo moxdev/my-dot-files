@@ -10,9 +10,17 @@ brew upgrade
 
 echo " brew installing utility/essential programs."
 brew install fish
-
 brew install tree
 brew install wakeonlan
+brew install git
+
+echo " Installing Powerline Fonts from GitHub"
+
+brew install fontconfig
+cp /usr/local/etc/fonts/fonts.conf.bak /usr/local/etc/fonts/fonts.conf
+
+git clone https://github.com/powerline/fonts.git
+./fonts/install.sh
 
 echo " brew installing development dependencies."
 brew install node
