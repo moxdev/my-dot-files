@@ -2,6 +2,7 @@
 
 echo " Installing zsh."
 brew install zsh zsh-completions
+brew install zsh-autosuggestions
 
 echo " Installing oh-my-zsh."
 git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh

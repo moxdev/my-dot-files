@@ -9,9 +9,9 @@ echo " brew upgrade any already-installed formulae."
 brew upgrade
 
 echo " brew installing utility/essential programs."
+brew install git
 brew install tree
 brew install wakeonlan
-brew install git
 
 echo " Installing Powerline Fonts from GitHub"
 brew install fontconfig

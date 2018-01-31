@@ -19,6 +19,12 @@ brew cask install visual-studio-code
 brew cask install vlc
 brew cask install qlmarkdown
 brew cask install qlimagesize
+brew cask install qlcolorcode
+brew cask install qlstephen
+brew cask install quicklook-json
+brew cask install qlimagesize
+brew cask install betterzip
+brew cask install qlvideo
 brew cask install iterm2
 
 echo " Successfully installed all brew cask apps.\n"
