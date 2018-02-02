@@ -22,6 +22,8 @@ git clone https://github.com/powerline/fonts.git
 
 echo " brew installing development dependencies."
 brew install node
+brew install yarn --without-node
+npm install -g browser-sync
 
 echo " Removing outdated versions from the cellar."
 brew cleanup
