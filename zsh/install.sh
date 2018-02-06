@@ -1,5 +1,19 @@
 #!/bin/sh
 
+# Install Powerline fonts for ZSH
+echo " Installing Powerline Fonts."
+git clone https://github.com/powerline/fonts.git --depth=1
+
+cd fonts
+./install.sh
+
+echo " Removing cloned fonts directory"
+cd ..
+rm -rf fonts
+
+echo " Powerline Fonts installation complete"
+
+# Install ZSH and OH-MY-ZSH
 echo " Installing zsh."
 brew install zsh zsh-completions
 brew install zsh-autosuggestions
@@ -21,6 +35,3 @@ fi
 
 echo " Changing default shell to zsh."
 chsh -s /usr/local/bin/zsh
-
-
-
