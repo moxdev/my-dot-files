@@ -25,10 +25,13 @@ echo " Installing Wes Bos Cobalt2 iTerm and ZSH theme."
 git clone https://github.com/wesbos/Cobalt2-iterm.git ~/zsh
 cp ~/zsh/cobalt2.zsh-theme ~/.oh-my-zsh/themes
 
+echo " Setting up Hyper config file."
+cp ~/zsh/.hyper.js ~/.hyper.js
+
 echo " Creating .zshrc file."
 if [ -e ~/.zshrc ]; then
     echo ".zshrc already exists"
-else 
+else
     echo "No .zshrc found, installing .zshrc template"
     cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
 fi

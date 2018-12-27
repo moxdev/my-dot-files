@@ -6,6 +6,8 @@ echo "\n Hey there. Never mind me, just setting up your system.\n"
 
 ./homebrew/install.sh
 
+./npm/npm-install.sh
+
 ./zsh/install.sh
 
 cp .gitignore.global ~

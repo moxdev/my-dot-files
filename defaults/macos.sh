@@ -10,6 +10,13 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
 echo "\n Global changes."
 
+echo "- Show Library folder."
+chflags nohidden ~/Library
+
+echo "- Store screenshots in subfolder on desktop."
+mkdir ~/Desktop/Screenshots
+defaults write com.apple.screencapture location ~/Desktop/Screenshots
+
 echo "- Expand save panel by default."
 defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
 defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode2 -bool true
@@ -28,31 +35,30 @@ defaults write com.apple.menuextra.clock DateFormat -string "EEE d MMM  HH:mm:ss
 
 # MacBook Only
 
-# echo "- Change the battery to show the percentage."
-# defaults write com.apple.menuextra.battery ShowPercent -string "YES"
+echo "- Change the battery to show the percentage."
+defaults write com.apple.menuextra.battery ShowPercent -string "YES"
 
+echo "\n Keyboard."
 
-# echo "\n Keyboard."
+echo "- Set Keyboard > Key Repeat to be the fastest possible from System Preferences."
+defaults write NSGlobalDomain KeyRepeat -integer 2
 
-# echo "- Set Keyboard > Key Repeat to be the fastest possible from System Preferences."
-# defaults write NSGlobalDomain KeyRepeat -integer 2
+echo "- Set Keyboard > Delay Until Repeat to be the fastest possible from System Preferences."
+defaults write NSGlobalDomain InitialKeyRepeat -integer 15
 
-# echo "- Set Keyboard > Delay Until Repeat to be the fastest possible from System Preferences."
-# defaults write NSGlobalDomain InitialKeyRepeat -integer 15
+echo "\n Trackpad."
 
-# echo "\n Trackpad."
+echo "- Enable three finger drag."
+defaults write com.apple.AppleMultitouchTrackpad TrackpadThreeFingerDrag -integer 1
+defaults write com.apple.AppleMultitouchTrackpad TrackpadThreeFingerHorizSwipeGesture -integer 0
+defaults write com.apple.AppleMultitouchTrackpad TrackpadThreeFingerVertSwipeGesture -integer 0
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadThreeFingerDrag -integer 1
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadThreeFingerHorizSwipeGesture -integer 0
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadThreeFingerVertSwipeGesture -integer 0
+defaults write NSGlobalDomain com.apple.trackpad.threeFingerSwipeGesture -integer 1
 
-# echo "- Enable three finger drag."
-# defaults write com.apple.AppleMultitouchTrackpad TrackpadThreeFingerDrag -integer 1
-# defaults write com.apple.AppleMultitouchTrackpad TrackpadThreeFingerHorizSwipeGesture -integer 0
-# defaults write com.apple.AppleMultitouchTrackpad TrackpadThreeFingerVertSwipeGesture -integer 0
-# defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadThreeFingerDrag -integer 1
-# defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadThreeFingerHorizSwipeGesture -integer 0
-# defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadThreeFingerVertSwipeGesture -integer 0
-# defaults write NSGlobalDomain com.apple.trackpad.threeFingerSwipeGesture -integer 1
-
-# echo "- Enable four finger Exposé."
-# defaults write com.apple.dock showAppExposeGestureEnabled -integer 1
+echo "- Enable four finger Exposé."
+defaults write com.apple.dock showAppExposeGestureEnabled -integer 1
 
 echo "\n Dock."
 
@@ -62,8 +68,8 @@ defaults write com.apple.Dock autohide -boolean true
 echo "- Resize dock tiles."
 defaults write com.apple.Dock tilesize -integer 48
 
-echo "- Wipe all (default) app icons from the Dock."
-defaults write com.apple.dock persistent-apps -array ""
+#echo "- Wipe all (default) app icons from the Dock."
+#defaults write com.apple.dock persistent-apps -array ""
 
 echo "\n Finder."
 
@@ -71,11 +77,29 @@ echo "- Set default path to HOME directory."
 defaults write com.apple.finder NewWindowTarget -string "PfLo"
 defaults write com.apple.finder NewWindowTargetPath -string "file://${HOME}/"
 
+echo "- Show all file extensions."
+defaults write -g AppleShowAllExtensions -bool true
+
+echo "- Show Pathbar, Statusbar, Path in Title."
+defaults write com.apple.finder ShowPathbar -bool true
+defaults write com.apple.finder ShowStatusBar -bool true
+defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
+
+echo "- Show Sidebar, but remove the Tags section.."
+defaults write com.apple.finder ShowSidebar -bool true
+defaults write com.apple.finder ShowRecentTags -bool false
+
+echo "- Automatically open a new Finder window when a volume is mounted."
+defaults write com.apple.frameworks.diskimages auto-open-ro-root -bool true
+defaults write com.apple.frameworks.diskimages auto-open-rw-root -bool true
+defaults write com.apple.finder OpenWindowForNewRemovableDisk -bool true
+
 echo "- When performing a search, search the current folder by default."
 defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
 
 echo "- Avoid creating .DS_Store files on network volumes."
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
+defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
 
 echo "- Enable snap-to-grid for icons on the desktop and in other icon views."
 /usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
@@ -91,16 +115,16 @@ defaults write com.apple.finder FXInfoPanesExpanded -dict \
   OpenWith -bool true \
   Privileges -bool true
 
-echo "- Hide icons for hard drives, servers, and removable media on the desktop."
+echo "- Show icons for hard drives, servers, and removable media on the desktop."
 defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool true
 defaults write com.apple.finder ShowHardDrivesOnDesktop -bool true
 defaults write com.apple.finder ShowMountedServersOnDesktop -bool true
 defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool true
 
-echo "\n Spotlight."
+#echo "\n Spotlight."
 
-echo "- Disable Spotlight indexing for any volume that gets mounted and has not yet been indexed before."
+#echo "- Disable Spotlight indexing for any volume that gets mounted and has not yet been indexed before."
 # Use `sudo mdutil -i off "/Volumes/foo"` to stop indexing any volume.
-sudo defaults write /.Spotlight-V100/VolumeConfiguration Exclusions -array "/Volumes"
-
+#sudo defaults write /.Spotlight-V100/VolumeConfiguration Exclusions -array "/Volumes"
+killall Finder
 echo "\n All done."

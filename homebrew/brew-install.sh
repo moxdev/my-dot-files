@@ -13,6 +13,12 @@ brew install git
 brew install tree
 brew install wakeonlan
 
+echo " Git Configuration Setup."
+git config --global user.name "Shane Biggs"
+git config --global user.email "moxdev1@gmail.com"
+git config --global github.user moxdev
+git config --global color.ui true
+
 echo " Installing Powerline Fonts from GitHub"
 brew install fontconfig
 cp /usr/local/etc/fonts/fonts.conf.bak /usr/local/etc/fonts/fonts.conf
