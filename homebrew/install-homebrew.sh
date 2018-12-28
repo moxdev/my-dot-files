@@ -2,13 +2,12 @@
 
 # Install Homebrew if it's not already present.
 if command -v brew >/dev/null 2>&1; then
-  echo " Homebrew already exists. Skipping install.\n"
+  echo " Homebrew already exists. Skipping install."
 else
   echo " Installing Homebrew. (http://brew.sh)"
-  echo " Please install the command line tools when prompted, and press 'enter' after it's done.\n"
   /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
   brew doctor
-  echo " Homebrew successfully installed.\n"
+  echo " Homebrew successfully installed."
 fi
 
 # Run the provided brewfile.
@@ -17,4 +16,4 @@ fi
 # Run the provided caskfile.
 ./homebrew/brew-cask-install.sh
 
-echo " Homebrew install done.\n"
+echo " Homebrew install done."

@@ -8,6 +8,7 @@ brew cask install alfred
 brew cask install appcleaner
 brew cask install bettertouchtool
 brew cask install betterzip
+brew cask install box-sync
 brew cask install caffeine
 brew cask install codekit
 brew cask install cyberduck
@@ -18,12 +19,14 @@ brew cask install firefox
 brew cask install firefox-developer-edition
 brew cask install google-chrome
 brew cask install hyper
+brew cask install private-internet-access
 brew cask install iterm2
 brew cask install itsycal
 brew cask install local-by-flywheel
 brew cask install macdown
 brew cask install nvm
 brew cask install skype
+brew cask install slack
 brew cask install spectacle
 brew cask install sublime-text
 brew cask install qlmarkdown
@@ -38,4 +41,4 @@ brew cask install vanilla
 brew cask install visual-studio-code
 brew cask install vlc
 
-echo " Successfully installed all brew cask apps.\n"
+echo " Successfully installed all brew cask apps."

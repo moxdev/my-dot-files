@@ -50,6 +50,7 @@ tmp/
 *.sqlite
 cache/
 log/
+error_log
 
 # OS generated files #
 ######################

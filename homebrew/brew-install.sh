@@ -19,12 +19,8 @@ git config --global user.email "moxdev1@gmail.com"
 git config --global github.user moxdev
 git config --global color.ui true
 
-echo " Installing Powerline Fonts from GitHub"
+echo " Installing fontconfig."
 brew install fontconfig
-cp /usr/local/etc/fonts/fonts.conf.bak /usr/local/etc/fonts/fonts.conf
-
-git clone https://github.com/powerline/fonts.git
-./fonts/install.sh
 
 echo " brew installing development dependencies."
 brew install node
@@ -32,4 +28,4 @@ brew install node
 echo " Removing outdated versions from the cellar."
 brew cleanup
 
-echo " Successfully installed all brew apps.\n"
+echo " Successfully installed all brew apps."
