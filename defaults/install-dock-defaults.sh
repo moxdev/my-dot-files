@@ -6,7 +6,7 @@ echo "- Turn on Dock autohiding."
 defaults write com.apple.dock autohide -bool true
 
 echo "- Resize Dock tiles."
-defaults write com.apple.dock tilesize -integer 36
+defaults write com.apple.dock tilesize -integer 48
 
 echo "- Minimize application windows into Dock icon."
 defaults write com.apple.dock minimize-to-application -bool true

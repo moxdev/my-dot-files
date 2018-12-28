@@ -16,15 +16,13 @@ brew cask install dash
 brew cask install docker
 brew cask install dropbox
 brew cask install firefox
-brew cask install firefox-developer-edition
+brew cask install homebrew/cask-versions/firefox-developer-edition
 brew cask install google-chrome
 brew cask install hyper
 brew cask install private-internet-access
 brew cask install iterm2
 brew cask install itsycal
-brew cask install local-by-flywheel
 brew cask install macdown
-brew cask install nvm
 brew cask install skype
 brew cask install slack
 brew cask install spectacle
@@ -34,7 +32,6 @@ brew cask install qlimagesize
 brew cask install qlcolorcode
 brew cask install qlstephen
 brew cask install quicklook-json
-brew cask install qlimagesize
 brew cask install qlvideo
 brew cask install teamviewer
 brew cask install vanilla

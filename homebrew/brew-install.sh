@@ -22,8 +22,11 @@ git config --global color.ui true
 echo " Installing fontconfig."
 brew install fontconfig
 
-echo " brew installing development dependencies."
+echo " brew installing Node."
 brew install node
+
+echo " brew installing NVM."
+brew install nvm
 
 echo " Removing outdated versions from the cellar."
 brew cleanup

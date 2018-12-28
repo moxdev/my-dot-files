@@ -9,14 +9,13 @@ echo " Successfully installed node versions."
 
 echo " NPM installing global packages."
 
-echo " NPM installed Browsersync."
+echo "- installed Browsersync."
 npm install -g browser-sync
 
-echo " NPM installed Gulp."
+echo "- NPM installed Gulp."
 npm install gulp-cli -g
 
-echo " NPM installed GatsbyJS."
+echo "- NPM installed GatsbyJS."
 npm install --global gatsby-cli
-
 
 echo " Successfully installed node packages."
