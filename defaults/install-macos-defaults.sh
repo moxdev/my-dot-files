@@ -12,6 +12,9 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 # GLOBAL SETTINGS #
 ###################
 
+echo "- Closing any system preference windows first"
+osascript -e 'tell application "System Preferences" to quit'
+
 echo " Installing Global Settings."
 ./defaults/install-global-defaults.sh
 

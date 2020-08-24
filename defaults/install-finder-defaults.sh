@@ -3,7 +3,10 @@
 # FINDER SETTINGS #
 
 echo "- Show Library folder."
-chflags nohidden ~/Library
+sudo chflags nohidden ~/Library
+
+echo "- Show the /Volumes folder"
+sudo chflags nohidden /Volumes
 
 echo "- Allow text selection in Quick Look."
 defaults write com.apple.finder QLEnableTextSelection -bool true

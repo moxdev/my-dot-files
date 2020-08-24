@@ -6,7 +6,7 @@ echo "- Turn on Dock autohiding."
 defaults write com.apple.dock autohide -bool true
 
 echo "- Resize Dock tiles."
-defaults write com.apple.dock tilesize -integer 48
+defaults write com.apple.dock tilesize -integer 40
 
 echo "- Minimize application windows into Dock icon."
 defaults write com.apple.dock minimize-to-application -bool true
@@ -23,11 +23,11 @@ defaults write com.apple.dock persistent-others -array-add '{tile-data={}; tile-
 echo "- Enable the Recent Items in Dock."
 defaults write com.apple.dock persistent-others -array-add '{ "tile-data" = { "list-type" = 1; }; "tile-type" = "recents-tile"; }'
 
-echo "- Disable Dashboard."
-defaults write com.apple.dashboard mcx-disabled -bool true
+echo "- Wipe all (default) app icons from the Dock."
+defaults write com.apple.dock persistent-apps -array ""
 
-#echo "- Wipe all (default) app icons from the Dock."
-#defaults write com.apple.dock persistent-apps -array ""
+echo "-Show indicator lights for open applications in the Dock"
+defaults write com.apple.dock show-process-indicators -bool true
 
 echo "- Restarting Dock."
 killall Dock

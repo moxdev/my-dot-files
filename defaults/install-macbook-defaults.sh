@@ -1,6 +1,7 @@
 #!/bin/sh
-
-# MACBOOK SETTINGS (Trackpad, Keyboard, Battery) #
+###############################################################################
+# MACBOOK SETTINGS (Trackpad, Keyboard, Battery)                              #
+###############################################################################
 
 echo "- Change the battery to show the percentage."
 defaults write com.apple.menuextra.battery ShowPercent -string "YES"
@@ -33,3 +34,30 @@ defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 
 echo "- Enable natural scroll."
 defaults write NSGlobalDomain com.apple.swipescrolldirection -bool true
+
+echo "- Enable full keyboard access for all controls"
+defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
+
+###############################################################################
+# Energy Settings                                                               #
+###############################################################################
+
+echo " Energy Saving Settings."
+
+echo "- Enable lid wakeup"
+sudo pmset -a lidwake 1
+
+echo "- Restart automatically on power loss"
+sudo pmset -a autorestart 1
+
+echo "- Restart automatically if the computer freezes"
+sudo systemsetup -setrestartfreeze on
+
+echo "- Sleep the display after 15 minutes"
+sudo pmset -a displaysleep 15
+
+echo "- Disable machine sleep while charging"
+sudo pmset -c sleep 0
+
+echo "- Set machine sleep to 5 minutes on battery"
+sudo pmset -b sleep 5

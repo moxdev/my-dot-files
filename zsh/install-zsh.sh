@@ -13,7 +13,8 @@ echo " Powerline Fonts installation complete."
 
 # Install ZSH and OH-MY-ZSH
 echo " Installing zsh.\n"
-brew install zsh zsh-completions
+brew install zsh
+brew zsh-completions
 brew install zsh-autosuggestions
 
 echo " Installing oh-my-zsh."
@@ -28,8 +29,8 @@ if [ -e ~/.zshrc ]; then
     echo ".zshrc already exists"
 else
     echo "No .zshrc found, installing .zshrc template"
-    cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
+    cp .zshrc ~
 fi
 
 echo " Changing default shell to zsh."
-chsh -s /usr/local/bin/zsh
+sudo chsh -s /usr/local/bin/zsh
